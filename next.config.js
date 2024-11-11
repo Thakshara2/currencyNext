@@ -1,10 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
-  eslint: {
-    ignoreDuringBuilds: true,
+  reactStrictMode: true,
+  images: {
+    domains: ['flagcdn.com'],
+    unoptimized: true,
   },
-  images: { unoptimized: true },
-};
+  env: {
+    NEXT_PUBLIC_EXCHANGE_RATE_API_KEY: process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY,
+  },
+  experimental: {
+    esmExternals: 'loose',
+  },
+  transpilePackages: [
+    '@radix-ui/react-select',
+    '@radix-ui/react-dialog',
+    'next-themes',
+    'framer-motion'
+  ]
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

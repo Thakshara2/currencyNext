@@ -2,7 +2,7 @@ const API_KEY = process.env.NEXT_PUBLIC_EXCHANGE_RATE_API_KEY;
 const BASE_URL = "https://v6.exchangerate-api.com/v6";
 
 if (!API_KEY) {
-  throw new Error("Exchange Rate API key is not defined in environment variables. Please add NEXT_PUBLIC_EXCHANGE_RATE_API_KEY to your .env file");
+  throw new Error("Exchange Rate API key is not defined in .env file. Please add NEXT_PUBLIC_EXCHANGE_RATE_API_KEY to your .env file");
 }
 
 export interface ExchangeRateResponse {
